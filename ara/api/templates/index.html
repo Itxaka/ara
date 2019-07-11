@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Plays</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Started</th>
+    <th>Ended</th>
+    <th>Duration</th>
+    <th>UUID</th>
+  </tr>
+  {% for play in plays %}
+    <tr>
+    <td>{{ play.id }}</td>
+    <td><a href="play/{{ play.id }}.html">{{ play.name }}</a></td>
+    <td>{{ play.status }}</td>
+    <td>{{ play.started }}</td>
+    <td>{{ play.ended }}</td>
+    <td>{{ play.duration }}</td>
+    <td>{{ play.uuid }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

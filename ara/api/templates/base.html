@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+  <script>
+  function goBack() {
+    window.history.back()
+  }
+  </script>
+  {% block head %}
+  {% endblock %}
+</head>
+<body>
+{% if not page == "index" %}
+<button onclick="goBack()">Go Back</button>
+{% endif %}
+{% block body %}
+{% endblock %}
+</body>
+</html>
